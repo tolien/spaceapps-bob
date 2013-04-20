@@ -1,7 +1,7 @@
 class CreateAircrafts < ActiveRecord::Migration
   def change
     create_table :aircrafts do |t|
-      t.String :code
+      t.string :code
 
       t.timestamps
     end
