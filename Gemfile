@@ -43,3 +43,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'bootstrap-sass'
+gem 'geocoder'
