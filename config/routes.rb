@@ -1,4 +1,10 @@
 Spaceapps::Application.routes.draw do
+  resources :airports
+
+
+  resources :aircrafts
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
