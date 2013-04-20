@@ -1,22 +1,27 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-$ ->   
-    gla = new Airport 50, 25
-    gla.draw()
-    b747= new Aircraft 100, 25
-    b747.draw()
-  
-  
+
+$.getJSON "/airports.json", (data) ->
+  airports = (new Airport o for o in data)
+  console.log(airports)
+  (o.draw() for o in airports)
+
+# $.getJSON "/aircrafts.json", (data) ->
+#   aircrafts= (new Aircrafts o for o in data)
+#   console.log(aircrafts)
+#   (o.draw() for o in aircrafts)
+
+
 class Airport
-  constructor: (@x, @y) ->
+  constructor: ({@name, @code, @latitude, @longitude}) ->
 
   draw: ->
     canvas = document.getElementById("vis")
     context = canvas.getContext("2d")
-    context.fillRect @x, @y, 25, 25
-    
-    
+    context.fillRect @latitude, @longitude, 25, 25
+
+
 class Aircraft
   constructor: (@x, @y) ->
 
