@@ -44,3 +44,5 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 gem 'geocoder'
+
+gem 'devise'
