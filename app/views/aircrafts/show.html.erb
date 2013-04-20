@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Code:</b>
-  <%= @aircraft.code %>
-</p>
+    <p>
+      <b>Code:</b>
+      <%= @aircraft.code %>
+    </p>
 
 
-<%= link_to 'Edit', edit_aircraft_path(@aircraft) %> |
-<%= link_to 'Back', aircrafts_path %>
+    <%= link_to 'Edit', edit_aircraft_path(@aircraft) %> |
+    <%= link_to 'Back', aircrafts_path %>
+</div>
