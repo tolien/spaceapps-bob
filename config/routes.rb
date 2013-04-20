@@ -3,6 +3,9 @@ Spaceapps::Application.routes.draw do
 
 
   resources :aircrafts
+  
+  
+  resources :visualisation
 
 
   # The priority is based upon order of creation:
