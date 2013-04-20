@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AirportsControllerTest < ActionController::TestCase
   setup do
-    @airport = airports(:one)
+    @airport = airports(:yyz)
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class AirportsControllerTest < ActionController::TestCase
 
   test "should create airport" do
     assert_difference('Airport.count') do
-      post :create, airport: { code: @airport.code, name: @airport.name }
+      post :create, airport: { code: @airport.code, name: @airport.name, latitude: @airport.latitude, longitude: @airport.longitude }
     end
 
     assert_redirected_to airport_path(assigns(:airport))
@@ -35,7 +35,7 @@ class AirportsControllerTest < ActionController::TestCase
   end
 
   test "should update airport" do
-    put :update, id: @airport, airport: { code: @airport.code, name: @airport.name }
+    put :update, id: @airport, airport: { code: @airport.code, name: @airport.name, latitude: @airport.latitude, longitude: @airport.longitude }
     assert_redirected_to airport_path(assigns(:airport))
   end
 
