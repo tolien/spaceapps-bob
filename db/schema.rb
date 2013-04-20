@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130420183823) do
     t.datetime "updated_at", :null => false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "address"
   end
 
   create_table "users", :force => true do |t|
