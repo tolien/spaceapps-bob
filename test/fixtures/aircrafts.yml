@@ -2,6 +2,10 @@
 
 one:
   code: G-SAC
+  source: yyz
+  destination: jfk
 
 two:
   code: L-SAD
+  source: jfk
+  destination: yyz
