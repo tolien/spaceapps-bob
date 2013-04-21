@@ -47,3 +47,4 @@ gem 'geocoder'
 
 gem 'devise'
 gem 'immigrant'
+gem 'friendly_id'

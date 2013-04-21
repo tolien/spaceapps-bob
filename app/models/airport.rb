@@ -19,4 +19,7 @@ class Airport < ActiveRecord::Base
     (self.arriving_aircraft.size == 0 && self.departing_aircraft.size == 0)
   end
   
+  extend FriendlyId
+  friendly_id :code, use: :slugged
+  
 end
