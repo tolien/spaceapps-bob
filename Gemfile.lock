@@ -48,9 +48,14 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    foreigner (1.4.1)
+      activerecord (>= 3.0.0)
     geocoder (1.1.6)
     hike (1.2.2)
     i18n (0.6.4)
+    immigrant (0.1.4)
+      activerecord (>= 3.0)
+      foreigner (>= 1.2.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
@@ -121,6 +126,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   geocoder
+  immigrant
   jquery-rails
   pg
   rails (= 3.2.11)

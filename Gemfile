@@ -46,3 +46,4 @@ gem 'bootstrap-sass'
 gem 'geocoder'
 
 gem 'devise'
+gem 'immigrant'
