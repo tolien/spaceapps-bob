@@ -46,7 +46,7 @@ class AircraftsController < ApplicationController
 
     respond_to do |format|
       if @aircraft.save
-        format.html { redirect_to @aircraft, notice: 'Aircraft was successfully created.' }
+        format.html { redirect_to aircrafts_path, notice: 'Aircraft was successfully created.' }
         format.json { render json: @aircraft, status: :created, location: @aircraft }
       else
         format.html { render action: "new" }
