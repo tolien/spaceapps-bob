@@ -12,17 +12,23 @@
             <div class="container">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button> <a class="brand" href="/">Bob the ATC simulator</a>
                 <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li class="">
-                            <a href="/">Home</a>
-                        </li>
-                        <li class="">
-                            <a href="/airports">Airports</a>
-                        </li>
-                        <li class="">
-                            <a href="/aircrafts">Aircrafts</a>
-                        </li>
-                    </ul>
+                  <ul class="nav">
+                    <li class="">
+                      <a href="/">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="/airports">Airports</a>
+                    </li>
+                    <li class="">
+                      <a href="/aircrafts">Aircrafts</a>
+                    </li><% if user_signed_in? %>
+                    <li>
+                      <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "") %>
+                    </li><% else %>
+                    <li>
+                      <%= link_to('Login', new_user_session_path, :class => "")  %>
+                    </li><% end %>
+                  </ul>
                 </div>
             </div>
         </div>

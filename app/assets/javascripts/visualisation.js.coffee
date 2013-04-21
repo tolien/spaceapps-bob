@@ -8,24 +8,34 @@ $.getJSON "/airports.json", (data) ->
   (o.draw() for o in airports)
 
 # $.getJSON "/aircrafts.json", (data) ->
-#   aircrafts= (new Aircrafts o for o in data)
+#   aircrafts= (new Aircraft o for o in data)
 #   console.log(aircrafts)
 #   (o.draw() for o in aircrafts)
+
+$ ->
+  test = new Aircraft({"code":"wibble", "destination_id":"GLA",  "source_id":"GLA", "latitude":250.0, "longitude":250.0})
+  console.log test
+  test.draw()
 
 
 class Airport
   constructor: ({@name, @code, @latitude, @longitude}) ->
 
   draw: ->
-    canvas = document.getElementById("vis")
-    context = canvas.getContext("2d")
+    canvas = document.getElementById "vis"
+    context = canvas.getContext "2d"
     context.fillRect @latitude, @longitude, 25, 25
+    context.font = "12px Arial"
+    context.fillText @code, @latitude, @longitude+35
 
 
 class Aircraft
-  constructor: (@x, @y) ->
+  constructor: ({@code, @destination_id, @source_id,  @latitude, @longitude}) ->
 
   draw: ->
     canvas = document.getElementById("vis")
     context = canvas.getContext("2d")
     context.fillRect @x, @y, 5, 5
+    
+  move: ->
+    
