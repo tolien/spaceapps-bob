@@ -28,6 +28,10 @@ This was built in the course of about 18 hours of effort; it's a long way from c
 	- also adding new data on airports
 		- how many aircraft can be sitting at an airport?
 		- how many aircraft can take off at once?
+- reporting (but not using Jasper…)
+	- it would be handy if the simulation could show certain metrics
+		- time waiting at airport / to land
+		- cost incurred (time in flight * amount of fuel burned per unit time * cost of some quantity of fuel)
 - authentication
 	- some features would be better if they required authentication (deleting airports, for instance)
 	- we did start setting up Devise, but disabled it because ALL the tests failed
