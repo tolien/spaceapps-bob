@@ -21,7 +21,6 @@ This was built in the course of about 18 hours of effort; it's a long way from c
 		- how long are planes on the ground, waiting to take off?
 		- how long are planes waiting to land?
 			- this is sort of a lite version of *aircraft in flight*
-			
 		- this means adding new data on aircraft
 			- fuel available
 			- fuel burnt per unit time (enhancement: vary this with activity; more fuel will be burned in flight than on the ground)
