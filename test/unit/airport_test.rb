@@ -42,6 +42,8 @@ class AirportTest < ActiveSupport::TestCase
     aircraft = aircrafts(:one)
     aircraft.source = @yyz
     aircraft.destination = @jfk
+    aircraft.latitude = 0
+    aircraft.longitude = 0
     aircraft.save!
     
     assert @jfk.arriving_aircraft.count != 0
