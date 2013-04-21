@@ -28,5 +28,8 @@ This was built in the course of about 18 hours of effort; it's a long way from c
 	- also adding new data on airports
 		- how many aircraft can be sitting at an airport?
 		- how many aircraft can take off at once?
+- authentiation
+	- some features would be better if they required authentication (deleting airports, for instance)
+	- we did start setting up Devise, but disabled it because ALL the tests failed
 
 [1]: http://spaceappschallenge.org/challenge/no-delays-air-traffic-management/
