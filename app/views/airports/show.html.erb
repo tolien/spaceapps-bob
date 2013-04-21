@@ -1,17 +1,17 @@
 <div class="row">
     <p id="notice"><%= notice %></p>
 
-    <p>
-      <b>Name:</b>
-      <%= @airport.name %>
-    </p>
+    <h1> <%= @airport.name + "(" + @airport.code + ")" %></h1>
 
-    <p>
-      <b>Code:</b>
-      <%= @airport.code %>
-    </p>
-
-
-    <%= link_to 'Edit', edit_airport_path(@airport) %> |
-    <%= link_to 'Back', airports_path %>
+		<%= link_to 'Edit', edit_airport_path(@airport) %>
+		
+		<h2>Departing aircraft</h2>
+		<table>
+			<%= render(@airport.departing_aircraft) %>
+		</table>
+		
+		<h2>Arriving aircraft</h2>
+		<table>
+			<%= render(@airport.arriving_aircraft) %>
+		</table>
 </div>
