@@ -23,7 +23,7 @@ class AircraftsControllerTest < ActionController::TestCase
       post :create, aircraft: { code: @aircraft.code, source_id: @toronto.id, destination_id: @new_york.id }
     end
 
-    assert_redirected_to aircraft_path(assigns(:aircraft))
+    assert_redirected_to aircrafts_path
   end
 
   test "should show aircraft" do
