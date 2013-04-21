@@ -41,6 +41,8 @@ class AirportsControllerTest < ActionController::TestCase
 
   test "should destroy airport" do
     assert_difference('Airport.count', -1) do
+      @airport.arriving_aircraft.destroy_all
+      @airport.departing_aircraft.destroy_all
       delete :destroy, id: @airport
     end
 
