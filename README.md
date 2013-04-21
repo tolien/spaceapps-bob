@@ -9,6 +9,8 @@ To do:
 
 This was built in the course of about 18 hours of effort; it's a long way from complete!
 
+- update visualisation to use real coordinates
+	- it would be handy if we could store the *actual* coordinates of planes and aircraft, even if the model assumes a flat earth
 - regular updates
 	- the point of this is to build a simulation, so there has to be a way to update the state of the world on a regular basis
 	- the Rails Way to do this seems to be a cronjob using curl, with a controller which does the work required
@@ -23,5 +25,8 @@ This was built in the course of about 18 hours of effort; it's a long way from c
 		- fuel available
 		- fuel burnt per unit time (enhancement: vary this with activity; more fuel will be burned in flight than on the ground)
 			- this would be enhanced by *regular updates*
+	- also adding new data on airports
+		- how many aircraft can be sitting at an airport?
+		- how many aircraft can take off at once?
 
 [1]: http://spaceappschallenge.org/challenge/no-delays-air-traffic-management/
