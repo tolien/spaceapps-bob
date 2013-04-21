@@ -3,6 +3,22 @@ require 'test_helper'
 class AirportTest < ActiveSupport::TestCase
   setup do
     @yyz = airports(:yyz)
+    @jfk = airports(:jfk)
+  end
+  
+  test "airport validation" do
+    airport = Airport.create()
+    
+    assert airport.invalid?
+    assert airport.errors[:code].include?("can't be blank")
+    assert airport.errors[:name].include?("can't be blank")
+    assert airport.errors[:longitude].include?("is not a number")
+    assert airport.errors[:latitude].include?("is not a number")
+    
+    airport.code = @yyz.code + "_2"
+    airport.name = @yyz.name
+    airport.longitude = @yyz.longitude
+    airport.latitude = @yyz.latitude
   end
   
   test "airport coordinate validity" do
