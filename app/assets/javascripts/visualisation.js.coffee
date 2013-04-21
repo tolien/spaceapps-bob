@@ -7,15 +7,10 @@ $.getJSON "/airports.json", (data) ->
   console.log(airports)
   (o.draw() for o in airports)
 
-# $.getJSON "/aircrafts.json", (data) ->
-#   aircrafts= (new Aircraft o for o in data)
-#   console.log(aircrafts)
-#   (o.draw() for o in aircrafts)
-
-$ ->
-  test = new Aircraft({"code":"wibble", "destination_id":"GLA",  "source_id":"GLA", "latitude":250.0, "longitude":250.0})
-  console.log test
-  test.draw()
+ $.getJSON "/aircrafts.json", (data) ->
+   aircrafts= (new Aircraft o for o in data)
+   console.log(aircrafts)
+   (o.draw() for o in aircrafts)
 
 
 class Airport
@@ -26,7 +21,7 @@ class Airport
     context = canvas.getContext "2d"
     context.fillRect @latitude, @longitude, 25, 25
     context.font = "12px Arial"
-    context.fillText @code, @latitude, @longitude+35
+    context.fillText @code, @latitude, @longitude+40
 
 
 class Aircraft
@@ -35,7 +30,10 @@ class Aircraft
   draw: ->
     canvas = document.getElementById("vis")
     context = canvas.getContext("2d")
-    context.fillRect @x, @y, 5, 5
+    context.fillRect @latitude, @longitude, 10, 10
+    context.font = "12px Arial"
+    context.fillText @code, @latitude - 10, @longitude+25
+
     
   move: ->
     
