@@ -13,4 +13,10 @@ class Airport < ActiveRecord::Base
   validates_numericality_of :latitude
   validates_numericality_of :longitude
   
+  before_destroy :check_no_aircraft_associated
+  
+  def check_no_aircraft_associated
+    (self.arriving_aircraft.size == 0 && self.departing_aircraft.size == 0)
+  end
+  
 end
