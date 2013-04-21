@@ -6,4 +6,6 @@ env:
 script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test
 notifications:
-  irc: "irc.geeksoc.org#bob"
+  irc:
+    channels:
+      - "irc.geeksoc.org#bob"
