@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420183823) do
+ActiveRecord::Schema.define(:version => 20130421033847) do
 
   create_table "aircrafts", :force => true do |t|
     t.string   "code"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.integer  "destination_id"
     t.integer  "source_id"
+    t.float    "latitude",       :default => 0.0
+    t.float    "longitude",      :default => 0.0
   end
 
   create_table "airports", :force => true do |t|

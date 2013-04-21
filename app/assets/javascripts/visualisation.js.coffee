@@ -1,26 +1,41 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-$ ->   
-    gla = new Airport 50, 25
-    gla.draw()
-    b747= new Aircraft 100, 25
-    b747.draw()
-  
-  
+
+$.getJSON "/airports.json", (data) ->
+  airports = (new Airport o for o in data)
+  console.log(airports)
+  (o.draw() for o in airports)
+
+# $.getJSON "/aircrafts.json", (data) ->
+#   aircrafts= (new Aircraft o for o in data)
+#   console.log(aircrafts)
+#   (o.draw() for o in aircrafts)
+
+$ ->
+  test = new Aircraft({"code":"wibble", "destination_id":"GLA",  "source_id":"GLA", "latitude":250.0, "longitude":250.0})
+  console.log test
+  test.draw()
+
+
 class Airport
-  constructor: (@x, @y) ->
+  constructor: ({@name, @code, @latitude, @longitude}) ->
 
   draw: ->
-    canvas = document.getElementById("vis")
-    context = canvas.getContext("2d")
-    context.fillRect @x, @y, 25, 25
-    
-    
+    canvas = document.getElementById "vis"
+    context = canvas.getContext "2d"
+    context.fillRect @latitude, @longitude, 25, 25
+    context.font = "12px Arial"
+    context.fillText @code, @latitude, @longitude+35
+
+
 class Aircraft
-  constructor: (@x, @y) ->
+  constructor: ({@code, @destination_id, @source_id,  @latitude, @longitude}) ->
 
   draw: ->
     canvas = document.getElementById("vis")
     context = canvas.getContext("2d")
     context.fillRect @x, @y, 5, 5
+    
+  move: ->
+    
