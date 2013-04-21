@@ -6,15 +6,13 @@
         <th>Code</th>
         <th></th>
         <th></th>
-        <th></th>
       </tr>
 
     <% @aircrafts.each do |aircraft| %>
       <tr>
-        <td><%= aircraft.code %></td>
-        <td><%= link_to 'Show', aircraft %></td>
+        <td><%= link_to aircraft.code, aircraft %></td>
         <td><%= link_to 'Edit', edit_aircraft_path(aircraft) %></td>
-        <td><%= link_to 'Destroy', aircraft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', aircraft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </table>

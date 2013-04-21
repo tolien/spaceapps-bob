@@ -1,11 +1,14 @@
 <div class="row">
     <p id="notice"><%= notice %></p>
+		
+		<p>
+			<b>Flying from <%= @aircraft.source.name + "(" + @aircraft.source.code + ")" %> to <%= @aircraft.destination.name + "(" + @aircraft.destination.code + ")" %></b>
+		</p>
 
     <p>
       <b>Code:</b>
       <%= @aircraft.code %>
     </p>
-
 
     <%= link_to 'Edit', edit_aircraft_path(@aircraft) %> |
     <%= link_to 'Back', aircrafts_path %>
