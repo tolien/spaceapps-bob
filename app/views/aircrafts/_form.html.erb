@@ -23,6 +23,14 @@
 		<%= f.label :arrival_airport %><br />
 		<%= f.collection_select(:source_id, Airport.all, :id, :code, {:prompt => true}) %>
 	</div>
+	<div class="field">
+		<%= f.label :latitude %><br />
+		<%= f.text_field :latitude %>
+	</div>
+	<div class="field">
+		<%= f.label :longitude %><br />
+		<%= f.text_field :longitude %>
+	</div>
   <div class="actions">
     <%= f.submit( :class => "btn btn-primary" ) %>
   </div>
