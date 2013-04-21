@@ -21,4 +21,9 @@ class AirportTest < ActiveSupport::TestCase
     airport.longitude = nil
     assert airport.invalid?, "Airport is invalid with no lat/long set"
   end
+  
+  test "airport code must be unique" do
+    airport = Airport.new(name: @yyz.name, code: @yyz.code, latitude: @yyz.latitude, longitude: @yyz.longitude)
+    assert airport.invalid?, "Airport with the same code as an existing one is invalid"
+  end
 end
