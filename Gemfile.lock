@@ -52,6 +52,7 @@ GEM
       activerecord (>= 3.0.0)
     friendly_id (4.0.9)
     geocoder (1.1.6)
+    gmaps4rails (1.5.6)
     hike (1.2.2)
     i18n (0.6.4)
     immigrant (0.1.4)
@@ -128,6 +129,7 @@ DEPENDENCIES
   devise
   friendly_id
   geocoder
+  gmaps4rails
   immigrant
   jquery-rails
   pg
