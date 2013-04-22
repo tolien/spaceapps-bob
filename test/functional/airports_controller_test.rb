@@ -18,7 +18,7 @@ class AirportsControllerTest < ActionController::TestCase
 
   test "should create airport" do
     assert_difference('Airport.count') do
-      post :create, airport: { code: @airport.code + "_2", name: @airport.name, latitude: @airport.latitude, longitude: @airport.longitude }
+      post :create, airport: { code: @airport.code + "_2", name: @airport.name, latitude: @airport.latitude, longitude: @airport.longitude, capacity: @airport.capacity }
     end
 
     assert_redirected_to airport_path(assigns(:airport))

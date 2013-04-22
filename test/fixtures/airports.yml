@@ -5,9 +5,11 @@ yyz:
   code: YYZ
   latitude: 43.676667
   longitude: -79.630556
+  capacity: 10
 
 jfk:
   name: John F. Kennedy International
   code: JFK
   latitude: 40.639722
   longitude: -73.778889
+  capacity: 10

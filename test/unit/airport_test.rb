@@ -14,6 +14,7 @@ class AirportTest < ActiveSupport::TestCase
     assert airport.errors[:name].include?("can't be blank")
     assert airport.errors[:longitude].include?("is not a number")
     assert airport.errors[:latitude].include?("is not a number")
+    assert airport.errors[:capacity].include?("is not a number")
     
     airport.code = @yyz.code + "_2"
     airport.name = @yyz.name
@@ -50,8 +51,26 @@ class AirportTest < ActiveSupport::TestCase
     assert @yyz.departing_aircraft.count != 0
     assert_no_difference 'Airport.count', "Airports with associated aircraft do not get destroyed" do
       @jfk.destroy
-    end
+    end    
+  end
+  
+  test "airport capacity validity" do
+    airport = @jfk
+    assert airport.valid?
     
+    airport.capacity = 'cheese'
+    assert airport.invalid?
+    assert airport.errors[:capacity].include?("is not a number"), "cheese is not a valid number"
+    
+    airport.capacity = -10
+    assert airport.invalid?
+    assert airport.errors[:capacity].include?("must be greater than or equal to 0")
+    
+    airport.capacity = 0
+    assert airport.valid?
+    
+    airport.capacity = 100
+    assert airport.valid?
   end
   
   test "airport code must be unique" do

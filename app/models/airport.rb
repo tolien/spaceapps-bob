@@ -1,5 +1,5 @@
 class Airport < ActiveRecord::Base
-  attr_accessible :code, :name, :latitude, :longitude, :address
+  attr_accessible :code, :name, :latitude, :longitude, :address, :capacity
   
   reverse_geocoded_by :latitude, :longitude
   after_validation :reverse_geocode
@@ -12,6 +12,8 @@ class Airport < ActiveRecord::Base
   
   validates_numericality_of :latitude
   validates_numericality_of :longitude
+  
+  validates_numericality_of :capacity, only_integer: true, greater_than_or_equal_to: 0
   
   before_destroy :check_no_aircraft_associated
   
