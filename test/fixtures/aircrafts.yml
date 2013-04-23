@@ -4,8 +4,10 @@ one:
   code: G-SAC
   source: yyz
   destination: jfk
+  altitude: 0
 
 two:
   code: L-SAD
   source: jfk
   destination: yyz
+  altitude: 100

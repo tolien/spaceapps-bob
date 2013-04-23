@@ -20,7 +20,7 @@ class AircraftsControllerTest < ActionController::TestCase
 
   test "should create aircraft" do
     assert_difference('Aircraft.count') do
-      post :create, aircraft: { code: @aircraft.code, source_id: @toronto.id, destination_id: @new_york.id, latitude: 0, longitude: 0 }
+      post :create, aircraft: { code: @aircraft.code, source_id: @toronto.id, destination_id: @new_york.id, latitude: 0, longitude: 0, altitude: 0 }
     end
 
     assert_redirected_to aircrafts_path
