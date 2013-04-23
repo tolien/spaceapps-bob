@@ -17,11 +17,9 @@ This was built in the course of about 18 hours of effort; it's a long way from c
 	- the Rails Way to do this seems to be a cronjob using curl, with a controller which does the work required
 - aircraft in flight
 	- just now, aircraft are pretty much stuck at an airport, either the one they're leaving or the one they've arrived at. They obviously don't do that in the Real World.	
+	- collision detection
 - do something useful with aircraft on the ground
 	- before worrying about ~~snakes on~~ planes in the air, it would be nice to do something useful with planes on the ground
-	- how long are planes on the ground, waiting to take off?
-	- how long are planes waiting to land?
-		- this is sort of a lite version of *aircraft in flight*
 	- this means adding new data on aircraft
 		- fuel available
 		- fuel burnt per unit time (enhancement: vary this with activity; more fuel will be burned in flight than on the ground)
@@ -33,6 +31,9 @@ This was built in the course of about 18 hours of effort; it's a long way from c
 	- it would be handy if the simulation could show certain metrics
 		- time waiting at airport / to land
 		- cost incurred (time in flight * amount of fuel burned per unit time * cost of some quantity of fuel)
+  	- how long are planes on the ground, waiting to take off?
+  	- how long are planes waiting to land?
+  		- this is sort of a light version of *aircraft in flight*
 - authentication
 	- some features would be better if they required authentication (deleting airports, for instance)
 	- we did start setting up Devise, but disabled it because ALL the tests failed
